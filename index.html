@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Does It Burn? — Dark Romance Content Warnings & Ratings</title>
+  <meta name="description" content="Darkness ratings, spice levels & content warnings for dark romance readers. Search dark romance books and see what you're getting into.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES — Edit colors, fonts, sizing here
+       ============================================================ */
+    :root {
+      --bg: #1a1518;
+      --surface: #231e22;
+      --accent: #c9637a;
+      --accent-secondary: #e8a598;
+      --text-primary: #f0e8e5;
+      --text-muted: #9a8f8d;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 8px;
+      --radius-lg: 14px;
+      --max-width: 780px;
+      --transition: 0.25s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent-secondary); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ============================================================
+       LAYOUT
+       ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ============================================================
+       HEADER & BRANDING
+       ============================================================ */
+    header {
+      text-align: center;
+      padding: 48px 20px 32px;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .logo .flame { display: inline-block; margin-left: 4px; filter: brightness(1.1); }
+
+    .tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+      margin-top: 10px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      border: none;
+      margin: 24px auto 0;
+      opacity: 0.6;
+    }
+
+    /* ============================================================
+       SEARCH BAR
+       ============================================================ */
+    .search-section {
+      padding: 8px 0 32px;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 54px 16px 20px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: var(--surface);
+      border: 1.5px solid rgba(201,99,122,0.2);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .search-input::placeholder { color: var(--text-muted); }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(201,99,122,0.15);
+      outline: none;
+    }
+
+    .search-btn {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 1.15rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition);
+    }
+
+    .search-btn:hover { background: #b3546a; }
+
+    .search-hint {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 10px;
+    }
+
+    /* ============================================================
+       RESULTS AREA
+       ============================================================ */
+    #results {
+      padding-bottom: 24px;
+    }
+
+    .no-results {
+      text-align: center;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      padding: 28px 20px;
+    }
+
+    /* ============================================================
+       BOOK CARD
+       ============================================================ */
+    .book-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(201,99,122,0.1);
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      .book-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 24px 20px;
+      }
+      .book-cover-wrap { justify-self: center; }
+    }
+
+    /* Cover */
+    .book-cover-wrap {
+      width: 110px;
+      height: 165px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #2e272c;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .book-cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cover-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--accent);
+      background: linear-gradient(135deg, #2e272c 0%, #362e34 100%);
+      user-select: none;
+    }
+
+    /* Text info */
+    .book-info { min-width: 0; }
+
+    .book-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
+    .book-author {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    .book-year {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      opacity: 0.7;
+    }
+
+    /* Ratings row */
+    .ratings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 520px) {
+      .ratings { justify-content: center; }
+    }
+
+    .rating-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .rating-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .rating-icons {
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+    }
+
+    .rating-desc {
+      font-size: 0.78rem;
+      color: var(--accent-secondary);
+      font-style: italic;
+    }
+
+    /* Summary */
+    .book-summary {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      background: rgba(201,99,122,0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Toggle button */
+    .toggle-warnings {
+      background: none;
+      border: 1px solid rgba(201,99,122,0.3);
+      color: var(--accent);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      margin-bottom: 12px;
+    }
+
+    .toggle-warnings:hover {
+      background: rgba(201,99,122,0.1);
+      border-color: var(--accent);
+    }
+
+    /* Tags */
+    .tags-wrap {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      animation: fadeUp 0.25s ease both;
+    }
+
+    .tags-wrap.open { display: flex; }
+
+    @media (max-width: 520px) {
+      .tags-wrap { justify-content: center; }
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 13px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: rgba(201,99,122,0.12);
+      color: var(--accent-secondary);
+      border-radius: 100px;
+      border: 1px solid rgba(201,99,122,0.18);
+      white-space: nowrap;
+    }
+
+    /* CTA links */
+    .book-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 520px) {
+      .book-links { justify-content: center; }
+    }
+
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 22px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-amazon:hover { background: #b3546a; color: #fff; transform: translateY(-1px); }
+
+    .btn-bookshop {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 22px;
+      background: transparent;
+      color: var(--accent-secondary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      border: 1px solid rgba(232,165,152,0.3);
+      text-decoration: none;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .btn-bookshop:hover { background: rgba(232,165,152,0.08); border-color: var(--accent-secondary); color: var(--accent-secondary); }
+
+    /* ============================================================
+       SUBMIT FORM
+       ============================================================ */
+    .submit-section {
+      padding: 16px 0 40px;
+    }
+
+    .submit-toggle {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid rgba(201,99,122,0.15);
+      border-radius: var(--radius-lg);
+      padding: 18px 24px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color var(--transition);
+    }
+
+    .submit-toggle:hover { border-color: var(--accent); }
+
+    .submit-toggle .chevron {
+      font-size: 1.3rem;
+      color: var(--accent);
+      transition: transform var(--transition);
+    }
+
+    .submit-toggle.open .chevron { transform: rotate(180deg); }
+
+    .submit-form-wrap {
+      display: none;
+      background: var(--surface);
+      border: 1px solid rgba(201,99,122,0.15);
+      border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 24px;
+      margin-top: -14px;
+      animation: fadeUp 0.25s ease both;
+    }
+
+    .submit-form-wrap.open { display: block; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 11px 14px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      background: var(--bg);
+      border: 1px solid rgba(201,99,122,0.2);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+      transition: border-color var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(201,99,122,0.12);
+    }
+
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--bg); color: var(--text-primary); }
+    .form-group textarea { resize: vertical; min-height: 64px; }
+
+    .btn-submit {
+      margin-top: 18px;
+      padding: 13px 32px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn-submit:hover { background: #b3546a; transform: translateY(-1px); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 28px 20px;
+      color: var(--accent-secondary);
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-style: italic;
+    }
+
+    .form-success.show { display: block; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      text-align: center;
+      padding: 32px 20px 40px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(201,99,122,0.08);
+    }
+
+    footer a { color: var(--accent); }
+
+    /* ============================================================
+       UTILITY
+       ============================================================ */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header>
+    <h1 class="logo">Does It Burn?<span class="flame" aria-hidden="true"> 🔥</span></h1>
+    <p class="tagline">Darkness ratings, spice levels &amp; content warnings for dark romance readers</p>
+    <hr class="header-rule">
+  </header>
+
+  <!-- ============================================================
+       SEARCH
+       ============================================================ -->
+  <main class="container">
+    <section class="search-section" aria-label="Book search">
+      <div class="search-wrapper">
+        <label for="search-input" class="sr-only">Search a book title or author</label>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Search a book title or author..."
+          autocomplete="off"
+        >
+        <button class="search-btn" id="search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+      <p class="search-hint">Try "Haunting Adeline", "Penelope Douglas", or "Verity"</p>
+    </section>
+
+    <!-- ============================================================
+         RESULTS
+         ============================================================ -->
+    <section id="results" aria-live="polite" aria-label="Search results"></section>
+
+    <!-- ============================================================
+         SUBMIT FORM
+         ============================================================ -->
+    <section class="submit-section" id="submit-section" aria-label="Submit a book">
+      <button class="submit-toggle" id="submit-toggle" aria-expanded="false" aria-controls="submit-form-wrap">
+        <span>Submit a Book</span>
+        <span class="chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="submit-form-wrap" id="submit-form-wrap" role="region">
+        <form id="submit-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="sub-title">Book Title</label>
+              <input type="text" id="sub-title" required>
+            </div>
+            <div class="form-group">
+              <label for="sub-author">Author</label>
+              <input type="text" id="sub-author" required>
+            </div>
+            <div class="form-group">
+              <label for="sub-darkness">Darkness Rating</label>
+              <select id="sub-darkness" required>
+                <option value="">Select...</option>
+                <option value="1">1 — Slow simmer</option>
+                <option value="2">2 — Getting warm</option>
+                <option value="3">3 — Scorched</option>
+                <option value="4">4 — On fire</option>
+                <option value="5">5 — Burned to ash</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sub-spice">Spice Rating</label>
+              <select id="sub-spice" required>
+                <option value="">Select...</option>
+                <option value="1">1 — Sweet</option>
+                <option value="2">2 — Warm</option>
+                <option value="3">3 — Steamy</option>
+                <option value="4">4 — Explicit</option>
+                <option value="5">5 — No limits</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="sub-tags">Content Warning Tags</label>
+              <textarea id="sub-tags" placeholder="e.g. dubcon, stalking, violence, age gap..."></textarea>
+            </div>
+            <div class="form-group full">
+              <label for="sub-email">Your Email (optional)</label>
+              <input type="email" id="sub-email" placeholder="reader@example.com">
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Submit for Review</button>
+        </form>
+        <div class="form-success" id="form-success">
+          Thank you! 🔥 Your submission is under review.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <p>Does It Burn? is reader-supported. Book links may be affiliate links.</p>
+    <p style="margin-top:6px;"><a href="#submit-section">Submit a book</a></p>
+  </footer>
+
+  <script>
+    // ============================================================
+    // CONFIGURATION — Rating labels (edit here)
+    // ============================================================
+    const DARKNESS_LABELS = {
+      1: 'Slow simmer',
+      2: 'Getting warm',
+      3: 'Scorched',
+      4: 'On fire',
+      5: 'Burned to ash'
+    };
+
+    const SPICE_LABELS = {
+      1: 'Sweet',
+      2: 'Warm',
+      3: 'Steamy',
+      4: 'Explicit',
+      5: 'No limits'
+    };
+
+    // ============================================================
+    // EMBEDDED BOOK DATABASE — 25 dark romance titles
+    // ============================================================
+    const BOOKS = [
+      {
+        id: "haunting-adeline",
+        title: "Haunting Adeline",
+        author: "H.D. Carlton",
+        darkness: 5,
+        spice: 5,
+        summary: "Extremely dark stalker romance with graphic violence and non-consent. For experienced dark romance readers only.",
+        tags: ["non-consent", "stalking", "violence", "murder", "dark hero", "obsession", "graphic content", "kidnapping"],
+        amazonSlug: "Haunting+Adeline+HD+Carlton",
+        year: 2021
+      },
+      {
+        id: "twisted-love",
+        title: "Twisted Love",
+        author: "Ana Huang",
+        darkness: 2,
+        spice: 4,
+        summary: "Brooding, emotionally unavailable hero with a dark past falls for his best friend's sister. Moderate dark themes with steamy content.",
+        tags: ["possessive hero", "brother's best friend", "trauma", "forced proximity", "emotional abuse backstory"],
+        amazonSlug: "Twisted+Love+Ana+Huang",
+        year: 2021
+      },
+      {
+        id: "corrupt",
+        title: "Corrupt",
+        author: "Penelope Douglas",
+        darkness: 4,
+        spice: 4,
+        summary: "A revenge-fueled dark romance with morally gray characters, power games, and an intense enemies-to-lovers dynamic.",
+        tags: ["revenge", "bullying", "masked villains", "morally gray", "enemies to lovers", "power play", "group dynamics", "manipulation"],
+        amazonSlug: "Corrupt+Penelope+Douglas",
+        year: 2015
+      },
+      {
+        id: "icebreaker",
+        title: "Icebreaker",
+        author: "Hannah Grace",
+        darkness: 1,
+        spice: 3,
+        summary: "A lighthearted sports romance between a hockey player and a figure skater. Minimal darkness, moderately steamy.",
+        tags: ["sports romance", "forced proximity", "opposites attract", "college setting"],
+        amazonSlug: "Icebreaker+Hannah+Grace",
+        year: 2022
+      },
+      {
+        id: "credence",
+        title: "Credence",
+        author: "Penelope Douglas",
+        darkness: 4,
+        spice: 5,
+        summary: "Taboo, isolated-setting romance with significant age gaps and multiple love interests. Features explicit content and morally complex dynamics.",
+        tags: ["taboo", "age gap", "multiple love interests", "isolation", "grief", "stepfamily", "explicit content", "power imbalance"],
+        amazonSlug: "Credence+Penelope+Douglas",
+        year: 2020
+      },
+      {
+        id: "vicious",
+        title: "Vicious",
+        author: "L.J. Shen",
+        darkness: 3,
+        spice: 4,
+        summary: "A cruel rich-boy romance with class warfare, bullying, and an intense enemies-to-lovers arc. Emotionally brutal hero.",
+        tags: ["bullying", "enemies to lovers", "class difference", "cruel hero", "rich/poor", "emotional abuse", "possessive hero"],
+        amazonSlug: "Vicious+LJ+Shen",
+        year: 2017
+      },
+      {
+        id: "king-of-wrath",
+        title: "King of Wrath",
+        author: "Ana Huang",
+        darkness: 2,
+        spice: 4,
+        summary: "Billionaire arranged marriage romance with a commanding hero and strong heroine. Light dark themes, plenty of steam.",
+        tags: ["arranged marriage", "billionaire", "forced proximity", "possessive hero", "slow burn"],
+        amazonSlug: "King+of+Wrath+Ana+Huang",
+        year: 2022
+      },
+      {
+        id: "punk-57",
+        title: "Punk 57",
+        author: "Penelope Douglas",
+        darkness: 3,
+        spice: 4,
+        summary: "Secret identity pen-pal romance that turns into a volatile enemies-to-lovers story with bullying and deception.",
+        tags: ["bullying", "secret identity", "enemies to lovers", "high school", "deception", "pen pals", "revenge"],
+        amazonSlug: "Punk+57+Penelope+Douglas",
+        year: 2016
+      },
+      {
+        id: "devious-lies",
+        title: "Devious Lies",
+        author: "Parker S. Huntington",
+        darkness: 3,
+        spice: 3,
+        summary: "A dark deception romance where lies unravel between two people with hidden agendas. Emotional manipulation and trust issues.",
+        tags: ["deception", "lies", "manipulation", "hidden identity", "emotional abuse", "trust issues", "revenge"],
+        amazonSlug: "Devious+Lies+Parker+Huntington",
+        year: 2020
+      },
+      {
+        id: "in-a-holidaze",
+        title: "In a Holidaze",
+        author: "Christina Lauren",
+        darkness: 1,
+        spice: 2,
+        summary: "A sweet, lighthearted holiday romance with a magical twist. No dark content — pure feel-good romantic comedy.",
+        tags: ["holiday romance", "romantic comedy", "found family", "magical realism", "feel-good"],
+        amazonSlug: "In+a+Holidaze+Christina+Lauren",
+        year: 2020
+      },
+      {
+        id: "den-of-vipers",
+        title: "Den of Vipers",
+        author: "K.A. Knight",
+        darkness: 5,
+        spice: 5,
+        summary: "Extremely dark reverse harem with graphic violence, explicit content, and morally bankrupt antiheroes. No limits.",
+        tags: ["reverse harem", "mafia", "violence", "graphic content", "kidnapping", "dubcon", "dark heroes", "multiple love interests", "captive"],
+        amazonSlug: "Den+of+Vipers+KA+Knight",
+        year: 2020
+      },
+      {
+        id: "empire-of-the-vampire",
+        title: "Empire of the Vampire",
+        author: "Jay Kristoff",
+        darkness: 3,
+        spice: 2,
+        summary: "Dark epic fantasy with vampires, religious themes, and graphic violence. Not a romance-primary story but contains dark romantic elements.",
+        tags: ["dark fantasy", "vampires", "violence", "religious themes", "war", "loss", "graphic violence"],
+        amazonSlug: "Empire+of+the+Vampire+Jay+Kristoff",
+        year: 2021
+      },
+      {
+        id: "binding-13",
+        title: "Binding 13",
+        author: "Chloe Walsh",
+        darkness: 3,
+        spice: 2,
+        summary: "An emotional sports romance dealing with domestic abuse and trauma. The romance is slow-burn and tender, but the backstory is heavy.",
+        tags: ["domestic abuse", "trauma", "sports romance", "slow burn", "protective hero", "high school", "emotional"],
+        amazonSlug: "Binding+13+Chloe+Walsh",
+        year: 2019
+      },
+      {
+        id: "pestilence",
+        title: "Pestilence",
+        author: "Laura Thalassa",
+        darkness: 4,
+        spice: 3,
+        summary: "One of the Four Horsemen of the Apocalypse spreads plague across the world in this dark paranormal romance with captivity themes.",
+        tags: ["apocalypse", "captivity", "paranormal", "plague", "forced proximity", "violence", "dark hero", "enemies to lovers"],
+        amazonSlug: "Pestilence+Laura+Thalassa",
+        year: 2018
+      },
+      {
+        id: "violent-delights",
+        title: "Violent Delights",
+        author: "Natasha Knight",
+        darkness: 5,
+        spice: 4,
+        summary: "A brutal arranged marriage dark romance with themes of captivity, control, and violence. Very dark power dynamics.",
+        tags: ["arranged marriage", "captivity", "violence", "dark hero", "power imbalance", "control", "dubcon", "revenge"],
+        amazonSlug: "Violent+Delights+Natasha+Knight",
+        year: 2021
+      },
+      {
+        id: "the-deal",
+        title: "The Deal",
+        author: "Elle Kennedy",
+        darkness: 2,
+        spice: 3,
+        summary: "College sports romance with a fake-dating setup. Deals with past sexual assault sensitively. Mostly lighthearted with emotional depth.",
+        tags: ["sexual assault backstory", "college", "sports romance", "fake dating", "hockey", "slow burn"],
+        amazonSlug: "The+Deal+Elle+Kennedy",
+        year: 2015
+      },
+      {
+        id: "kingdom-of-the-wicked",
+        title: "Kingdom of the Wicked",
+        author: "Kerri Maniscalco",
+        darkness: 3,
+        spice: 2,
+        summary: "Dark fantasy romance with demons, witchcraft, and murder. Slow-burn enemies-to-lovers with morally gray hero. Violence throughout.",
+        tags: ["dark fantasy", "demons", "witchcraft", "murder", "enemies to lovers", "slow burn", "morally gray hero"],
+        amazonSlug: "Kingdom+of+the+Wicked+Kerri+Maniscalco",
+        year: 2020
+      },
+      {
+        id: "a-little-hate",
+        title: "Thoughtless",
+        author: "S.C. Stephens",
+        darkness: 2,
+        spice: 4,
+        summary: "An emotionally raw love triangle between a woman, her boyfriend, and a rock star. Centers on infidelity and emotional turmoil.",
+        tags: ["infidelity", "love triangle", "emotional turmoil", "rock star", "angst", "slow burn", "guilt"],
+        amazonSlug: "Thoughtless+SC+Stephens",
+        year: 2009
+      },
+      {
+        id: "bully",
+        title: "Bully",
+        author: "Penelope Douglas",
+        darkness: 3,
+        spice: 3,
+        summary: "A high school bully romance where the boy next door turns tormentor. Explores emotional cruelty, social humiliation, and reconciliation.",
+        tags: ["bullying", "enemies to lovers", "high school", "emotional abuse", "social humiliation", "boy next door", "revenge"],
+        amazonSlug: "Bully+Penelope+Douglas",
+        year: 2014
+      },
+      {
+        id: "filthy-rich-boys",
+        title: "Filthy Rich Boys",
+        author: "C.M. Stunich",
+        darkness: 3,
+        spice: 4,
+        summary: "A dark academy reverse harem with rich, entitled boys and a heroine who fights back. Class warfare and power games.",
+        tags: ["reverse harem", "academy", "bullying", "class difference", "rich boys", "power play", "enemies to lovers"],
+        amazonSlug: "Filthy+Rich+Boys",
+        year: 2018
+      },
+      {
+        id: "throne-of-glass",
+        title: "Throne of Glass",
+        author: "Sarah J. Maas",
+        darkness: 2,
+        spice: 1,
+        summary: "A young adult dark fantasy with an assassin heroine. Contains violence and loss but romance is sweet. Spice increases in later books.",
+        tags: ["fantasy", "assassin", "violence", "slow burn", "love triangle", "loss", "young adult"],
+        amazonSlug: "Throne+of+Glass+Sarah+Maas",
+        year: 2012
+      },
+      {
+        id: "from-blood-and-ash",
+        title: "From Blood and Ash",
+        author: "Jennifer L. Armentrout",
+        darkness: 3,
+        spice: 4,
+        summary: "A dark fantasy romance with vampiric creatures, forbidden love, and graphic violence. Features a possessive hero and hidden identity twists.",
+        tags: ["dark fantasy", "vampires", "forbidden love", "possessive hero", "violence", "hidden identity", "betrayal"],
+        amazonSlug: "From+Blood+and+Ash+Jennifer+Armentrout",
+        year: 2020
+      },
+      {
+        id: "beautiful-disaster",
+        title: "Beautiful Disaster",
+        author: "Jamie McGuire",
+        darkness: 3,
+        spice: 3,
+        summary: "A volatile college romance with an aggressive, possessive hero. Themes of jealousy, co-dependency, and underground fighting.",
+        tags: ["possessive hero", "co-dependency", "jealousy", "college", "underground fighting", "toxic relationship", "angst"],
+        amazonSlug: "Beautiful+Disaster+Jamie+McGuire",
+        year: 2011
+      },
+      {
+        id: "ugly-love",
+        title: "Ugly Love",
+        author: "Colleen Hoover",
+        darkness: 2,
+        spice: 4,
+        summary: "A friends-with-benefits romance hiding deep emotional trauma. Dual timelines reveal devastating backstory. Emotionally heavy, very steamy.",
+        tags: ["friends with benefits", "trauma", "loss", "dual timeline", "emotional", "angst", "no strings attached"],
+        amazonSlug: "Ugly+Love+Colleen+Hoover",
+        year: 2014
+      },
+      {
+        id: "verity",
+        title: "Verity",
+        author: "Colleen Hoover",
+        darkness: 4,
+        spice: 4,
+        summary: "A psychological thriller with dark romantic elements. Features disturbing manuscript revelations, violence, and morally ambiguous characters.",
+        tags: ["psychological thriller", "unreliable narrator", "violence", "manipulation", "dark secrets", "morally gray", "disturbing content", "death"],
+        amazonSlug: "Verity+Colleen+Hoover",
+        year: 2018
+      }
+    ];
+
+    // ============================================================
+    // DOM REFERENCES
+    // ============================================================
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
+    const resultsEl = document.getElementById('results');
+    const submitToggle = document.getElementById('submit-toggle');
+    const submitFormWrap = document.getElementById('submit-form-wrap');
+    const submitForm = document.getElementById('submit-form');
+    const formSuccess = document.getElementById('form-success');
+
+    // ============================================================
+    // SEARCH LOGIC
+    // ============================================================
+    function searchBooks(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) return [];
+      return BOOKS.filter(function(book) {
+        return book.title.toLowerCase().includes(q) ||
+               book.author.toLowerCase().includes(q);
+      });
+    }
+
+    function handleSearch() {
+      var query = searchInput.value;
+      var results = searchBooks(query);
+
+      if (!query.trim()) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = '<p class="no-results">No results yet — <a href="#submit-section">submit this book below!</a></p>';
+        return;
+      }
+
+      resultsEl.innerHTML = results.map(renderCard).join('');
+
+      // Fetch covers for each result
+      results.forEach(function(book) {
+        fetchCover(book);
+      });
+    }
+
+    // Debounce helper
+    var searchTimer;
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(handleSearch, 200);
+    });
+
+    searchBtn.addEventListener('click', handleSearch);
+
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSearch();
+      }
+    });
+
+    // ============================================================
+    // RENDER CARD
+    // ============================================================
+    function renderCard(book) {
+      var darknessIcons = repeat('🔥', book.darkness);
+      var darknessEmpty = repeat('<span style="opacity:0.2">🔥</span>', 5 - book.darkness);
+      var spiceIcons = repeat('🌶️', book.spice);
+      var spiceEmpty = repeat('<span style="opacity:0.2">🌶️</span>', 5 - book.spice);
+
+      var tagsHtml = book.tags.map(function(tag) {
+        return '<span class="tag">' + escapeHtml(tag) + '</span>';
+      }).join('');
+
+      var initials = book.title.split(' ').map(function(w) { return w[0]; }).join('').substring(0, 2).toUpperCase();
+
+      var amazonUrl = 'https://www.amazon.com/s?k=' + encodeURIComponent(book.title + ' ' + book.author);
+      var bookshopUrl = 'https://bookshop.org/search?keywords=' + encodeURIComponent(book.title);
+
+      return '<article class="book-card" data-book-id="' + book.id + '">' +
+        '<div class="book-cover-wrap">' +
+          '<div class="cover-placeholder" id="cover-' + book.id + '">' + initials + '</div>' +
+        '</div>' +
+        '<div class="book-info">' +
+          '<h2 class="book-title">' + escapeHtml(book.title) + '</h2>' +
+          '<p class="book-author">' + escapeHtml(book.author) + ' <span class="book-year">(' + book.year + ')</span></p>' +
+          '<div class="ratings">' +
+            '<div class="rating-group">' +
+              '<span class="rating-label">Darkness</span>' +
+              '<span class="rating-icons">' + darknessIcons + darknessEmpty + '</span>' +
+              '<span class="rating-desc">' + DARKNESS_LABELS[book.darkness] + '</span>' +
+            '</div>' +
+            '<div class="rating-group">' +
+              '<span class="rating-label">Spice</span>' +
+              '<span class="rating-icons">' + spiceIcons + spiceEmpty + '</span>' +
+              '<span class="rating-desc">' + SPICE_LABELS[book.spice] + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<p class="book-summary">' + escapeHtml(book.summary) + '</p>' +
+          '<button class="toggle-warnings" aria-expanded="false" onclick="toggleWarnings(this)">' +
+            '+ Show detailed warnings' +
+          '</button>' +
+          '<div class="tags-wrap">' + tagsHtml + '</div>' +
+          '<div class="book-links">' +
+            '<a href="' + amazonUrl + '" target="_blank" rel="noopener noreferrer" class="btn-amazon">Find on Amazon →</a>' +
+            '<a href="' + bookshopUrl + '" target="_blank" rel="noopener noreferrer" class="btn-bookshop">Bookshop.org</a>' +
+          '</div>' +
+        '</div>' +
+      '</article>';
+    }
+
+    // ============================================================
+    // TOGGLE WARNINGS
+    // ============================================================
+    function toggleWarnings(btn) {
+      var tagsWrap = btn.nextElementSibling;
+      var isOpen = tagsWrap.classList.contains('open');
+
+      if (isOpen) {
+        tagsWrap.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '+ Show detailed warnings';
+      } else {
+        tagsWrap.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = '− Hide detailed warnings';
+      }
+    }
+
+    // ============================================================
+    // GOOGLE BOOKS COVER FETCH
+    // ============================================================
+    function fetchCover(book) {
+      var url = 'https://www.googleapis.com/books/v1/volumes?q=intitle:' +
+        encodeURIComponent(book.title) + '+inauthor:' + encodeURIComponent(book.author) +
+        '&maxResults=1';
+
+      fetch(url)
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.items && data.items[0] && data.items[0].volumeInfo &&
+              data.items[0].volumeInfo.imageLinks && data.items[0].volumeInfo.imageLinks.thumbnail) {
+            var imgUrl = data.items[0].volumeInfo.imageLinks.thumbnail.replace('http:', 'https:');
+            var coverEl = document.getElementById('cover-' + book.id);
+            if (coverEl) {
+              var img = document.createElement('img');
+              img.src = imgUrl;
+              img.alt = 'Cover of ' + book.title;
+              img.onerror = function() { /* keep placeholder on error */ };
+              img.onload = function() {
+                coverEl.parentNode.replaceChild(img, coverEl);
+              };
+            }
+          }
+        })
+        .catch(function() { /* keep placeholder on fetch failure */ });
+    }
+
+    // ============================================================
+    // SUBMIT FORM LOGIC
+    // ============================================================
+    submitToggle.addEventListener('click', function() {
+      var isOpen = submitFormWrap.classList.contains('open');
+      if (isOpen) {
+        submitFormWrap.classList.remove('open');
+        submitToggle.classList.remove('open');
+        submitToggle.setAttribute('aria-expanded', 'false');
+      } else {
+        submitFormWrap.classList.add('open');
+        submitToggle.classList.add('open');
+        submitToggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    submitForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Basic validation
+      var title = document.getElementById('sub-title').value.trim();
+      var author = document.getElementById('sub-author').value.trim();
+      var darkness = document.getElementById('sub-darkness').value;
+      var spice = document.getElementById('sub-spice').value;
+
+      if (!title || !author || !darkness || !spice) {
+        return;
+      }
+
+      submitForm.style.display = 'none';
+      formSuccess.classList.add('show');
+    });
+
+    // ============================================================
+    // HELPERS
+    // ============================================================
+    function repeat(str, n) {
+      var result = '';
+      for (var i = 0; i < n; i++) result += str;
+      return result;
+    }
+
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
